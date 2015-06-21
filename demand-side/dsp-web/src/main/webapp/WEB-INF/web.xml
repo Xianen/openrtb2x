@@ -15,6 +15,10 @@
 		<param-name>BidderClassName</param-name>
 		<param-value>org.openrtb.dsp.client.SimpleBidder</param-value>
 	</init-param>
+	<init-param>
+		<param-name>DBLocation</param-name>
+		<param-value>/Users/qiuxe/git/openrtb2x/demand-side/dsp-web/src/main/resources/dspConf.json</param-value>
+	</init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>dsp</servlet-name>
