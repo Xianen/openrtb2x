@@ -64,6 +64,7 @@ public class SimpleBidder implements OpenRTBAPI
             response = new BidResponse();
             response.id = wReq.getId();          
             response.bidid = "simple-bid-tracker";
+            List<SeatBid> list = new ArrayList<SeatBid>();
             Map<String, String> seats = wReq.getUnblockedSeats(wReq.getSSPName());
             for (Impression i : wReq.getRequest().getImp())
             {    
@@ -83,11 +84,12 @@ public class SimpleBidder implements OpenRTBAPI
                     b.nurl = a.getNurl();
                     b.adid = adId; // serves up the same ad to all impressions
                     seat_bid.bid.add(b);
-                    List<SeatBid> list = new ArrayList<SeatBid>();
+                    
                     list.add(seat_bid);
-                    response.setSeatbid(list);
+                    
                 }
             }
+            response.setSeatbid(list);
         }
         return response;
     }
